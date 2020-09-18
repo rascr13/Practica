@@ -17,12 +17,14 @@ namespace Practica1.Controllers
         private DataContext db = new DataContext();
 
         // GET: api/claros
+        [Authorize]
         public IQueryable<claros> Getclaros()
         {
             return db.claros;
         }
 
         // GET: api/claros/5
+        [Authorize]
         [ResponseType(typeof(claros))]
         public IHttpActionResult Getclaros(int id)
         {
@@ -36,6 +38,7 @@ namespace Practica1.Controllers
         }
 
         // PUT: api/claros/5
+        [Authorize]
         [ResponseType(typeof(void))]
         public IHttpActionResult Putclaros(int id, claros claros)
         {
@@ -71,6 +74,7 @@ namespace Practica1.Controllers
         }
 
         // POST: api/claros
+        [Authorize]
         [ResponseType(typeof(claros))]
         public IHttpActionResult Postclaros(claros claros)
         {
@@ -86,6 +90,7 @@ namespace Practica1.Controllers
         }
 
         // DELETE: api/claros/5
+        [Authorize]
         [ResponseType(typeof(claros))]
         public IHttpActionResult Deleteclaros(int id)
         {
